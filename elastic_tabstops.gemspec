@@ -46,4 +46,5 @@ columns. Columns are made up of tab-terminated cells in adjacent lines of output
   spec.add_development_dependency "minitest-rg", "~> 5.0"
   spec.add_development_dependency "pry", "~> 0.12.2"
   spec.add_development_dependency "pry-byebug", "~> 3.7.0"
+  spec.add_development_dependency "ffaker", "~> 2.11.0"
 end

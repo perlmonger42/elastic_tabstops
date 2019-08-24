@@ -8,6 +8,7 @@ GEM
   specs:
     byebug (11.0.1)
     coderay (1.1.2)
+    ffaker (2.11.0)
     method_source (0.9.2)
     minitest (5.11.3)
     minitest-rg (5.2.0)
@@ -26,6 +27,7 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 2.0)
   elastic_tabstops!
+  ffaker (~> 2.11.0)
   minitest (~> 5.0)
   minitest-rg (~> 5.0)
   pry (~> 0.12.2)
