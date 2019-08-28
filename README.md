@@ -5,12 +5,14 @@ This is a Ruby implementation of
 Aligning output columns can greatly improve the legibility of program output.
 Unfortunately, that can be difficult to arrange.
 
-Elastic tabstops are an elegant solution to that problem.
+Elastic tabstops are an elegant solution to that problem.  The idea is to
+replace the classic "tabstops occur every 8 spaces" with the idea that
+corresponding tabs on adjacent lines should define a column, and the tabstop
+after that column's contents should be positioned to make that column just wide
+enough for its data.
 
-The idea is to replace the classic "every 8 spaces is a tabstop"
-with the idea that corresponding tabs on adjacent lines should jump forward to the
-_same position_, and that position should be wide enough for all the data in
-its column.
+Tabs have always been elastic. This proposal makes the tab _stops_ elastic, as
+well, by positioning them to fit the text.
 
 As an example, this code writes several lines to an ElasticTabstops output
 stream, where each line contains five tab-separated "words" of random length.
@@ -18,9 +20,11 @@ The elastic tabstops algorithm replaces tabs with spaces that neatly align the
 columns.
 ```ruby
 require "elastic_tabstops"
-et = ElasticTabstops::make_stream($stdout);
+
 def word(letter); letter * rand(12) end;
 def line(letters); letters.map { |letter| word(letter) }.join("\t") end;
+
+et = ElasticTabstops::make_stream($stdout);
 5.times do et.puts line(%w(a b c d e)) end; et.flush;
 ```
 ```text
@@ -30,6 +34,8 @@ aaaaaaaa   bb          cc    ddddddd    eeeee
 aaaaa      bbbbbb      ccccc dddddddddd ee
 aaaa       bbb         ccccc ddddd      eeeeeeee
 ```
+
+## Details
 
 Data to be formatted as part of a column must be terminated with a tab character
 (`"\t"`).  Any data that doesn't have a terminating tab (that is, from the last
