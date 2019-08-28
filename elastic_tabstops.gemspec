@@ -10,7 +10,10 @@ Gem::Specification.new do |spec|
   spec.email         = ["thom at boyers.org"]
 
   spec.summary       = %q{An output stream that makes columnar output easy.}
-  spec.description   = %q{This is an implementation of [elastic tabstops](http://nickgravgaard.com/elastic-tabstops/) in an output-stream filter.
+  spec.description   = %q{Generate monospaced output in neatly-aligned columns.
+
+This gem implements the Elastic Tabstops proposal
+(see http://nickgravgaard.com/elastic-tabstops/).
 
 Data written to an elastic tabstop output stream is reformatted to align
 columns. Columns are made up of tab-terminated cells in adjacent lines of output.
