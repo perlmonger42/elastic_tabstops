@@ -18,10 +18,8 @@ columns. Columns are made up of tab-terminated cells in adjacent lines of output
   spec.homepage      = "https://github.com/perlmonger42/elastic_tabstops"
   spec.license       = "MIT"
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+    spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
     spec.metadata["homepage_uri"] = spec.homepage
     spec.metadata["source_code_uri"] = "https://github.com/perlmonger42/elastic_tabstops"
@@ -45,6 +43,6 @@ columns. Columns are made up of tab-terminated cells in adjacent lines of output
   spec.add_development_dependency "minitest", "~> 5.0"
   spec.add_development_dependency "minitest-rg", "~> 5.0"
   spec.add_development_dependency "pry", "~> 0.12.2"
-  spec.add_development_dependency "pry-byebug", "~> 3.7.0"
-  spec.add_development_dependency "ffaker", "~> 2.11.0"
+  spec.add_development_dependency 'pry-byebug', '~> 3.7', '>= 3.7.0'
+  spec.add_development_dependency "ffaker", "~> 2.11", ">= 2.11.0"
 end
