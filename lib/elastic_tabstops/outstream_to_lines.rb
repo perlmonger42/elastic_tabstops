@@ -1,4 +1,6 @@
 module ElasticTabstops
+  require "stringio"
+
   class OutstreamToLines
 
     # INVARIANT: @text contains no newlines

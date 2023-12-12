@@ -1,3 +1,4 @@
+require "stringio"
 require "test_helper"
 require "minitest/rg"
 

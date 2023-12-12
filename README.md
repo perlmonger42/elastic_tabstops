@@ -21,11 +21,12 @@ columns.
 ```ruby
 require "elastic_tabstops"
 
-def word(letter); letter * rand(12) end;
-def line(letters); letters.map { |letter| word(letter) }.join("\t") end;
+def word(letter); letter * rand(12) end
+def line(letters); letters.map { |letter| word(letter) }.join("\t") end
 
-et = ElasticTabstops::make_stream($stdout);
-5.times do et.puts line(%w(a b c d e)) end; et.flush;
+et = ElasticTabstops::make_stream($stdout)
+5.times do et.puts line(%w(a b c d e)) end
+et.flush
 ```
 ```text
 aaaaaa     bbbbbbbbbbb c                eeeeeeeee
